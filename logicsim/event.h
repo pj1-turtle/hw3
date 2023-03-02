@@ -10,6 +10,10 @@ struct Event
 };
 
 typedef struct EventLess {
+		bool operator()(Event* l, Event* r) const {
+			return l->time < r->time;
+	}
+
         //write the operator() required to make this a functor that compares Events by time
 } EventLess;
 	
